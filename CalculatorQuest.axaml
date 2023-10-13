@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="400"
+        Width="300"
+        x:Class="CalculatorQuest.CalculatorQuest"
+        Title="CalculatorQuest"
+        Name="CalculatorScreen">
+        <Grid>
+                <!-- Set the background image -->
+                <Grid.Background>
+                        <ImageBrush Source="C:\Users\darkj\OneDrive\Images\fond d'écrand\20201019_235705_gauche.jpg" /> <!-- Replace YourImagePathHere.jpg with the actual path to your image file -->
+                </Grid.Background>
+
+                <!-- Create a 4x6 grid (excluding the labels) -->
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" /> 
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- First label at Row 0 -->
+                <Border BorderBrush="Red" BorderThickness="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+                        <Label  Name="OperationResult" Content="Your result here..." HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+                
+
+                <!-- Second label at Row 1 -->
+                <Border BorderBrush="Red" BorderThickness="1" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+                        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Name="OperationInput" Content="Your calculation here..." HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+                
+                <!-- Your buttons go here in the remaining rows of the 4x6 grid -->
+                
+                <Button Grid.Row="2" Grid.Column="0" Content="%" Name="Mod" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="C" Name="ClearAll" Click="Supall" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="2" Grid.Column="2" Content="CE" Name="ClearEntry" Click="SupCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="2" Grid.Column="3" Content="Del" Name="Del" Click="SupOneCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="3" Grid.Column="0" Content="1/x" Name="Inverse" Click="CalcInverse" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="²" Name="Square" Click="CalcSquare" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="3" Grid.Column="2" Content="Sqrt" Name="Sqrt" Click="CalcSqrt" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="3" Grid.Column="3" Content="/" Name="Divide" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="4" Grid.Column="3" Content="x" Name="Multiply" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="7" Grid.Column="2" Content="+/-" Name="Sign" Click="ChangeSignInput" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="6" Grid.Column="3" Content="+" Name="More" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="5" Grid.Column="3" Content="-" Name="Less" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="4" Grid.Column="0" Content="1" Name="One" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="4" Grid.Column="1" Content="2" Name="Two" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="4" Grid.Column="2" Content="3" Name="Three" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="5" Grid.Column="0" Content="4" Name="Four" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="5" Grid.Column="1" Content="5" Name="Five" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="5" Grid.Column="2" Content="6" Name="Six" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="6" Grid.Column="0" Content="7" Name="Seven" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="6" Grid.Column="1" Content="8" Name="Eight" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="6" Grid.Column="2" Content="9" Name="Nine" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="7" Grid.Column="0" Content="," Name="Dot" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="7" Grid.Column="1" Content="0" Name="Zero" Click="DisplayCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+                <Button Grid.Row="7" Grid.Column="3" Content="=" Name="Equal" Click="SendCalc" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40"/>
+        </Grid>
+</Window>
